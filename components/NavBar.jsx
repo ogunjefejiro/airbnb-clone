@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { GlobeAltIcon, MenuAlt3Icon, MenuIcon, SearchIcon, UserCircleIcon } from "@heroicons/react/solid";
 import { AnimatePresence, motion } from "framer-motion";
+import { AdjustmentsIcon } from "@heroicons/react/outline";
 
 const NavBar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -19,10 +20,10 @@ const NavBar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.8 }}
-      className="text-[#222222] border-b border-[#eaeaea] sticky top-0 bg-white z-30"
+      className="text-[#222222] md:border-b border-[#eaeaea] sticky top-0 bg-white z-30"
     >
       <div className="relative hidden md:block">
-        <div className="flex justify-between items-center py-3 md:py-4 max-w-[90%] lg:max-w-[90%] mx-auto text-black">
+        <div className="flex justify-between items-center py-4 max-w-[90%] mx-auto text-black">
           <Link href="/">
             <a>
               <img src="/Airbnb.png" alt="Airbnb Logo" className="max-h-8 hidden lg:block" />
@@ -53,28 +54,29 @@ const NavBar = () => {
               <UserCircleIcon className="w-9 text-[#717171] cursor-pointer" />
             </div>
           </div>
+        </div>
+      </div>
 
-          {/* mobile menu start */}
-          {/* <MenuAlt3Icon className="lg:hidden w-9 text-primary cursor-pointer" onClick={() => setMenuOpen(true)} />
-        {menuOpen && (
-          <div
-            className="fixed left-0 right-0 bottom-0 h-screen w-full lg:hidden bg-[#0000003d] z-[99999]"
-            onClick={() => setMenuOpen(false)}
-          >
-            <AnimatePresence>
-              <motion.div
-                initial={{ x: -100 }}
-                animate={{ x: 0 }}
-                exit={{ x: -100 }}
-                className="fixed top-0 left-0 bg-primary h-screen overflow-y-scroll"
-                onClick={(e) => e.stopPropagation()}
-              >
-                <MobileNavbar setMenuOpen={setMenuOpen} pageLink={pageLink} />
-              </motion.div>
-            </AnimatePresence>
+      {/* mobile menu*/}
+      <div className="md:hidden py-3">
+        <div className="flex justify-between border border-[#e1e1e1] shadow-md shadow-[#e1e1e1] rounded-full text-sm p-3 max-w-[90%] mx-auto">
+          <div className="flex gap-3 items-center px-2">
+            <span className="cursor-pointer">
+              <SearchIcon className="w-5" />
+            </span>
+            <div>
+              <p className="">Where to?</p>
+              <div className="text-paragraph text-xs flex gap-2">
+                <p>Anywhere</p>
+                <p>Any week</p>
+                <p>Add guests</p>
+              </div>
+            </div>
           </div>
-        )} */}
-          {/* mobile menu end */}
+
+          <span className="w-9 h-9 bg-white border border-[#e1e1e1] shadow rounded-full flex justify-center items-center cursor-pointer">
+            <AdjustmentsIcon className="w-4 rotate-90" />
+          </span>
         </div>
       </div>
     </motion.header>

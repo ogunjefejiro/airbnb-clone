@@ -3,10 +3,12 @@ import React, { useContext, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import FilterContext from "../context/FilterContext";
 import { filters } from "../helpers/data";
+import useMediaQuery from "../hooks/useMediaQuery";
 
 const FilterBar = () => {
   const { filterValue, setFilterValue } = useContext(FilterContext);
   const [scroll, setScroll] = useState(false);
+  const isMobile = useMediaQuery("(max-width: 640px)");
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -15,15 +17,15 @@ const FilterBar = () => {
   }, []);
 
   return (
-    <div className={`sticky top-[68px] bg-white z-20 ${scroll ? "shadow" : ""}`}>
-      <div className="max-w-[90%] lg:max-w-[90%] mx-auto">
+    <div className={`sticky top-[68px] bg-white z-20 ${scroll || isMobile ? "shadow" : "shadow-none"}`}>
+      <div className="w-full px-2 md:px-0 md:max-w-[90%] mx-auto">
         <div className="flex gap-6 items-center">
           <div className="overflow-hidden w-full">
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1 }}
-              className="flex gap-12 overflow-x-auto hide-scrollbar pt-2"
+              className="flex gap-8 md:gap-12 overflow-x-auto hide-scrollbar pt-2"
             >
               {filters.map(({ name, icon }, i) => (
                 <div
@@ -36,13 +38,13 @@ const FilterBar = () => {
                   <div className="w-6 min-w-[24px] min-h-[24px]">
                     <img src={icon} alt={name} className="w-full" />
                   </div>
-                  <p className="min-w-fit text-sm text-inherit">{name}</p>
+                  <p className="min-w-fit text-xs md:text-sm text-inherit">{name}</p>
                 </div>
               ))}
             </motion.div>
           </div>
 
-          <button className="flex gap-2 items-center px-4 py-3 rounded-lg text-sm border border-[#e1e1e1] shadow-sm shadow-[#e1e1e1] h-fit">
+          <button className="hidden md:flex gap-2 items-center px-4 py-3 rounded-lg text-sm border border-[#e1e1e1] shadow-sm shadow-[#e1e1e1] h-fit">
             <AdjustmentsIcon className="w-4 rotate-90" /> Filters
           </button>
         </div>
