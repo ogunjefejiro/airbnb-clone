@@ -1,8 +1,9 @@
 import React, { useRef, useState } from "react";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/outline";
 import { AnimatePresence, motion } from "framer-motion";
-import { formatMoney } from "../helpers/utils";
 import { HeartIcon, StarIcon } from "@heroicons/react/solid";
+import { formatMoney } from "../helpers/utils";
+import ListingSkelenton from "./ListingSkelenton";
 
 const ListingCard = ({ data: { images, name, location, hostName, availableDate, price, rating, id } }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -14,10 +15,9 @@ const ListingCard = ({ data: { images, name, location, hostName, availableDate, 
   const imagesLoaded = () => {
     counter.current += 1;
     if (counter.current >= images.length) {
-      setLoading(false);
+      setLoading(true);
     }
   };
-
   const prevImage = () => {
     if (currentIndex > 0) {
       setCurrentIndex(currentIndex - 1);
@@ -30,8 +30,9 @@ const ListingCard = ({ data: { images, name, location, hostName, availableDate, 
   };
 
   return (
-    <div>
-      {loading && <div className="h-[200px] md:h-[275px] rounded-xl bg-paragraph">loading</div>}
+    <div className="relative">
+      {loading && <ListingSkelenton />}
+
       <div className={`${loading ? "invisible" : "visible"}`}>
         <AnimatePresence key={id} mode="wait" initial={true}>
           <motion.div
