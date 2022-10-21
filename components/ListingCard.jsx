@@ -15,7 +15,7 @@ const ListingCard = ({ data: { images, name, location, hostName, availableDate, 
   const imagesLoaded = () => {
     counter.current += 1;
     if (counter.current >= images.length) {
-      setLoading(true);
+      setLoading(false);
     }
   };
   const prevImage = () => {
