@@ -21,15 +21,16 @@ const NavBar = () => {
       transition={{ duration: 0.8 }}
       className="text-[#222222] border-b border-[#eaeaea] sticky top-0 bg-white z-30"
     >
-      <div className="relative">
+      <div className="relative hidden md:block">
         <div className="flex justify-between items-center py-3 md:py-4 max-w-[90%] lg:max-w-[90%] mx-auto text-black">
           <Link href="/">
             <a>
-              <img src="/Airbnb.png" alt="Airbnb Logo" className="max-h-8" />
+              <img src="/Airbnb.png" alt="Airbnb Logo" className="max-h-8 hidden lg:block" />
+              <img src="/icons/airbnb-icon.svg" alt="Airbnb Logo" className="max-h-9 lg:hidden" />
             </a>
           </Link>
 
-          <div className="flex items-center border border-[#e1e1e1] shadow-md shadow-[#e1e1e1] rounded-full p-2 text-sm font-light absolute -translate-x-[50%] left-[50%]">
+          <div className="flex items-center border border-[#e1e1e1] shadow-md shadow-[#e1e1e1] rounded-full p-2 text-sm font-light absolute md:-translate-x-[20%] md:left-[20%] lg:-translate-x-[50%] lg:left-[50%]">
             <p className="px-4 cursor-pointer">Anywhere</p>
             <p className="px-4 border-x border-[#e1e1e1] cursor-pointer">Any Week</p>
             <div className="flex items-center">

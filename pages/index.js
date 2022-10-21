@@ -1,4 +1,4 @@
-import { FilterBar, ListingCardsContainer, Meta, Navbar } from "../components";
+import { FilterBar, Footer, ListingCardsContainer, Meta, Navbar } from "../components";
 
 const Home = () => {
   return (
@@ -7,6 +7,7 @@ const Home = () => {
       <Navbar />
       <FilterBar />
       <ListingCardsContainer />
+      <Footer />
     </>
   );
 };

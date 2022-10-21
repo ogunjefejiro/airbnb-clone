@@ -8,7 +8,7 @@ const ListingCardsContainer = () => {
   const filteredListings = listings.filter((item) => item.category === filterValue);
 
   return (
-    <div className="max-w-[90%] lg:max-w-[90%] mx-auto my-8">
+    <div className="max-w-[90%] lg:max-w-[90%] mx-auto mt-8 mb-20">
       <div className="grid gap-x-6 gap-y-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 place-content-center">
         {filteredListings?.map((data, i) => (
           <ListingCard data={data} key={i} />

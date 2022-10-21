@@ -10,7 +10,7 @@ const Meta = ({ title, keywords, description, image }) => {
       <meta name="description" content={description || ""} />
       <meta property="og:image" content={image || ""} />
       <meta charSet="utf-8" />
-      <link rel="icon" href="/favicon.ico" />
+      <link rel="icon" href="/icons/airbnb-icon.svg" />
       <title>{metaTitle}</title>
     </Head>
   );

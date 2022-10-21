@@ -16,6 +16,56 @@ export const filters = [
   { icon: "/icons/boats.jpeg", name: "Boats" },
 ];
 
+export const copyrightLinks = [
+  { path: "#", title: "Privacy" },
+  { path: "#", title: "Terms" },
+  { path: "#", title: "Sitemap" },
+  { path: "#", title: "Destinations" },
+];
+export const footerLinks = [
+  {
+    heading: "Support",
+    subMenus: [
+      { path: "#", title: "Help Center" },
+      { path: "#", title: "AirCover" },
+      { path: "#", title: "Safety Information" },
+      { path: "#", title: "Supporting people with disabilities" },
+      { path: "#", title: "Cancellation options" },
+      { path: "#", title: "Our COVID-19 Response" },
+      { path: "#", title: "Report a neighborhood concern" },
+    ],
+  },
+  {
+    heading: "Community",
+    subMenus: [
+      { path: "#", title: "Airbnb.org: disaster relief housing" },
+      { path: "#", title: "Support Afghan refugees" },
+      { path: "#", title: "Combating discrimination" },
+    ],
+  },
+  {
+    heading: "Hosting",
+    subMenus: [
+      { path: "#", title: "Try hosting" },
+      { path: "#", title: "AirCover for Hosts" },
+      { path: "#", title: "Explore hosting resources" },
+      { path: "#", title: "Visit our community forum" },
+      { path: "#", title: "How to host responsibly" },
+    ],
+  },
+  {
+    heading: "Airbnb",
+    subMenus: [
+      { path: "#", title: "Newsroom" },
+      { path: "#", title: "Learn about new features" },
+      { path: "#", title: "Letter from our founders" },
+      { path: "#", title: "Careers" },
+      { path: "#", title: "Investors" },
+      { path: "#", title: "Gift cards" },
+    ],
+  },
+];
+
 export const listings = [
   {
     images: ["/island2.webp", "/island3.webp", "/island2.webp", "/island1.webp"],
