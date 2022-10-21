@@ -1,5 +1,6 @@
 import { AdjustmentsIcon } from "@heroicons/react/solid";
 import React, { useContext, useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import FilterContext from "../context/FilterContext";
 import { filters } from "../helpers/data";
 
@@ -18,7 +19,12 @@ const FilterBar = () => {
       <div className="max-w-[90%] lg:max-w-[90%] mx-auto">
         <div className="flex gap-6 items-center">
           <div className="overflow-hidden w-full">
-            <div className="flex gap-12 overflow-x-auto hide-scrollbar pt-2">
+            <motion.div
+              initial={{ y: 100 }}
+              animate={{ y: 0 }}
+              transition={{ duration: 1 }}
+              className="flex gap-12 overflow-x-auto hide-scrollbar pt-2"
+            >
               {filters.map(({ name, icon }, i) => (
                 <div
                   key={i}
@@ -31,7 +37,7 @@ const FilterBar = () => {
                   <p className="min-w-fit text-sm text-inherit">{name}</p>
                 </div>
               ))}
-            </div>
+            </motion.div>
           </div>
 
           <button className="flex gap-2 items-center px-4 py-3 rounded-lg text-sm border border-[#e1e1e1] shadow-sm shadow-[#e1e1e1] h-fit">

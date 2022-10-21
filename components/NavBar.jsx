@@ -19,7 +19,7 @@ const NavBar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.8 }}
-      className="text-[#222222] border-b border-[#eaeaea] sticky top-0 bg-white z-20"
+      className="text-[#222222] border-b border-[#eaeaea] sticky top-0 bg-white z-30"
     >
       <div className="relative">
         <div className="flex justify-between items-center py-3 md:py-4 max-w-[90%] lg:max-w-[90%] mx-auto text-black">
