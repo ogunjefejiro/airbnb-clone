@@ -7,18 +7,11 @@ import { AnimatePresence, motion } from "framer-motion";
 const NavBar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [pageReady, setPageReady] = useState(false);
-  const [scroll, setScroll] = useState(false);
   const router = useRouter();
   const pageLink = router.pathname;
-  const stickyNav = [""]; //routes that need a sticky navigation
 
   useEffect(() => {
     setPageReady(true);
-  }, []);
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      window.addEventListener("scroll", () => setScroll(window.pageYOffset > 100));
-    }
   }, []);
 
   return (
@@ -26,7 +19,7 @@ const NavBar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.8 }}
-      className={`text-[#222222] border-b border-[#eaeaea] sticky top-0 bg-white z-20  ${scroll ? "shadow" : ""}`}
+      className="text-[#222222] border-b border-[#eaeaea] sticky top-0 bg-white z-20"
     >
       <div className="relative">
         <div className="flex justify-between items-center py-3 md:py-4 max-w-[90%] lg:max-w-[90%] mx-auto text-black">
