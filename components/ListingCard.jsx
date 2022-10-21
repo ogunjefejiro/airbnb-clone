@@ -30,7 +30,7 @@ const ListingCard = ({ data: { images, name, location, hostName, availableDate, 
   };
 
   return (
-    <>
+    <div>
       {loading && <div className="h-[200px] md:h-[275px] rounded-xl bg-paragraph">loading</div>}
       <div className={`${loading ? "invisible" : "visible"}`}>
         <AnimatePresence key={id} mode="wait" initial={true}>
@@ -118,7 +118,7 @@ const ListingCard = ({ data: { images, name, location, hostName, availableDate, 
           </motion.div>
         </AnimatePresence>
       </div>
-    </>
+    </div>
   );
 };
 
