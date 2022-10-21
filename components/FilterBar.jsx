@@ -20,8 +20,8 @@ const FilterBar = () => {
         <div className="flex gap-6 items-center">
           <div className="overflow-hidden w-full">
             <motion.div
-              initial={{ y: 100 }}
-              animate={{ y: 0 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
               transition={{ duration: 1 }}
               className="flex gap-12 overflow-x-auto hide-scrollbar pt-2"
             >
@@ -33,7 +33,9 @@ const FilterBar = () => {
                   }`}
                   onClick={() => setFilterValue(name)}
                 >
-                  <img src={icon} alt={name} className="w-6" />
+                  <div className="w-6 min-w-[24px] min-h-[24px]">
+                    <img src={icon} alt={name} className="w-full" />
+                  </div>
                   <p className="min-w-fit text-sm text-inherit">{name}</p>
                 </div>
               ))}
