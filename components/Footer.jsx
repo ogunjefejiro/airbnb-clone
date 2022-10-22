@@ -57,7 +57,7 @@ const Footer = () => {
 
       {/* mobile footer */}
       {scrollingUp && (
-        <motion.footer className="md:hidden">
+        <motion.footer className="md:hidden z-30">
           <div className="fixed left-0 right-0 bottom-0 flex justify-center bg-white border-t border-[#e1e1e1] shadow-sm shadow-[#e1e1e1]">
             <div className="max-w-[90%] mx-auto flex gap-12 items-center">
               {mobileFooterLinks.map(({ path, title, icon }, i) => (
