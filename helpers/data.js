@@ -1,3 +1,5 @@
+import { HeartIcon, SearchIcon, UserCircleIcon } from "@heroicons/react/outline";
+
 export const filters = [
   { icon: "/icons/islands.jpeg", name: "Islands" },
   { icon: "/icons/arctic.jpeg", name: "Arctic" },
@@ -22,6 +24,7 @@ export const copyrightLinks = [
   { path: "#", title: "Sitemap" },
   { path: "#", title: "Destinations" },
 ];
+
 export const footerLinks = [
   {
     heading: "Support",
@@ -64,6 +67,11 @@ export const footerLinks = [
       { path: "#", title: "Gift cards" },
     ],
   },
+];
+export const mobileFooterLinks = [
+  { path: "/", title: "Explore", icon: <SearchIcon className="w-6" /> },
+  { path: "#", title: "Wishlist", icon: <HeartIcon className="w-6" /> },
+  { path: "#", title: "Log in", icon: <UserCircleIcon className="w-6" /> },
 ];
 
 export const listings = [

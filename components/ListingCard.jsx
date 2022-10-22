@@ -16,8 +16,6 @@ const ListingCard = ({ data: { images, name, location, hostName, availableDate, 
     counter.current += 1;
     if (counter.current >= images.length) {
       setLoading(false);
-    } else if (images.length == 0) {
-      setLoading(false);
     }
   };
   const prevImage = () => {
@@ -46,7 +44,7 @@ const ListingCard = ({ data: { images, name, location, hostName, availableDate, 
             className="cursor-pointer"
           >
             {/* image */}
-            <div className="w-full h-[200px] md:h-[275px] relative overflow-hidden flex rounded-xl">
+            <div className="w-full h-[250px] md:h-[275px] relative overflow-hidden flex rounded-xl">
               {images.map((img, i) => (
                 <img
                   loading="lazy"
