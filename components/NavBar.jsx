@@ -1,25 +1,14 @@
 import Link from "next/link";
-import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
-import { GlobeAltIcon, MenuAlt3Icon, MenuIcon, SearchIcon, UserCircleIcon } from "@heroicons/react/solid";
-import { AnimatePresence, motion } from "framer-motion";
+import { GlobeAltIcon, MenuIcon, SearchIcon, UserCircleIcon } from "@heroicons/react/solid";
+import { motion } from "framer-motion";
 import { AdjustmentsIcon } from "@heroicons/react/outline";
 
 const NavBar = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [pageReady, setPageReady] = useState(false);
-  const router = useRouter();
-  const pageLink = router.pathname;
-
-  useEffect(() => {
-    setPageReady(true);
-  }, []);
-
   return (
     <motion.header
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.8 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
       className="text-[#222222] md:border-b border-[#eaeaea] sticky top-0 bg-white z-30"
     >
       <div className="relative hidden md:block">

@@ -16,7 +16,7 @@ const Footer = () => {
   return (
     <>
       <footer className="hidden md:block">
-        <div className="fixed left-0 right-0 bottom-0 bg-white border-t border-[#e1e1e1] shadow-sm shadow-[#e1e1e1] py-4">
+        <div className="fixed left-0 right-0 bottom-0 z-30 bg-white border-t border-[#e1e1e1] shadow-sm shadow-[#e1e1e1] py-4">
           <div className="max-w-[90%] mx-auto flex justify-between text-sm">
             <div className="flex gap-3 text-paragraph">
               <p>&copy; {year} Airbnb, Inc.</p>
