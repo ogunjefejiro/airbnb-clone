@@ -96,7 +96,7 @@ const ListingCard = ({ data: { images, name, location, hostName, availableDate, 
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.5 }}
-                  className="hidden md:block"
+                  className="hidden sm:block"
                 >
                   {currentIndex > 0 && (
                     <div
