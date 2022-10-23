@@ -13,10 +13,10 @@ const ListingCard = ({ data: { images, name, location, hostName, availableDate, 
   const counter = useRef(0);
 
   const imagesLoaded = () => {
-    counter.current += 1;
-    if (counter.current >= images.length - 1) {
-      setLoading(false);
-    }
+    // counter.current += 1;
+    // if (counter.current >= images.length - 1) {
+    setLoading(false);
+    // }
   };
   const prevImage = () => {
     if (currentIndex > 0) {
