@@ -21,11 +21,11 @@ const FooterModal = ({ showFooter, setShowFooter }) => {
       </span>
       <div className="max-w-[90%] lg:max-w-[90%] mx-auto py-10 lg:py-12 grid grid-cols-1 md:grid-cols-2 lg:flex gap-6 lg:gap-12 justify-between">
         {footerLinks?.map(({ heading, subMenus }, i) => (
-          <div className="w-full flex flex-col" key={heading + i}>
-            <h3 className="text-base font-[500] mb-3">{heading}</h3>
+          <div className="w-full flex flex-col gap-2 md:gap-4" key={heading + i}>
+            <h3 className="text-base">{heading}</h3>
             {subMenus.map(({ title, path }, i) => (
               <Link href={path} key={title + i}>
-                <a className="mt-2 md:mt-3 cursor-pointer text-sm text-paragraph font-light hover:underline">{title}</a>
+                <a className="cursor-pointer text-sm font-circle hover:underline">{title}</a>
               </Link>
             ))}
           </div>

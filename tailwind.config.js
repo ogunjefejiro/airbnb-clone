@@ -12,6 +12,7 @@ module.exports = {
     extend: {
       fontFamily: {
         circular: ["Circular", "sans-serif"],
+        circle: ["Circular-Light", "sans-serif"],
       },
     },
   },

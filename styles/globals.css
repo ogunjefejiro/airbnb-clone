@@ -6,6 +6,10 @@
   font-family: "Circular";
   src: url("/fonts/circular/CircularStd-Book.otf");
 }
+@font-face {
+  font-family: "Circular-light";
+  src: url("/fonts/circular/CircularStd-Light.otf");
+}
 
 
 body {

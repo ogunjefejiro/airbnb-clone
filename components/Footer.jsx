@@ -18,7 +18,7 @@ const Footer = () => {
       <footer className="hidden md:block">
         <div className="fixed left-0 right-0 bottom-0 z-30 bg-white border-t border-[#e1e1e1] shadow-sm shadow-[#e1e1e1] py-4">
           <div className="max-w-[90%] mx-auto flex justify-between text-sm">
-            <div className="flex gap-3 text-paragraph">
+            <div className="flex gap-3 font-circle">
               <p>&copy; {year} Airbnb, Inc.</p>
               {copyrightLinks.map(({ path, title }) => (
                 <Link href={path} key={title}>
@@ -59,16 +59,12 @@ const Footer = () => {
       {scrollingUp && (
         <motion.footer className="md:hidden">
           <div className="fixed left-0 right-0 bottom-0 z-30 flex justify-center bg-white border-t border-[#e1e1e1] shadow-sm">
-            <div className="max-w-[90%] mx-auto flex gap-12 items-center">
+            <div className="max-w-[90%] mx-auto flex gap-12 sm:gap-16 items-center">
               {mobileFooterLinks.map(({ path, title, icon }, i) => (
                 <Link href={path} key={path + i}>
-                  <a
-                    className={`flex flex-col items-center py-3 ${
-                      path == router.pathname ? "text-primary" : "text-paragraph"
-                    }`}
-                  >
-                    {icon}
-                    <span className="text-xs">{title}</span>
+                  <a className="flex flex-col items-center py-3">
+                    <span className={` ${path == router.pathname ? "text-primary" : "text-paragraph"}`}> {icon}</span>
+                    <span className={`text-xs ${path == router.pathname ? "" : "font-circle"}`}>{title}</span>
                   </a>
                 </Link>
               ))}

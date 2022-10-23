@@ -21,10 +21,10 @@ const NavBar = () => {
           </Link>
 
           <div className="flex items-center border border-[#e1e1e1] shadow-md shadow-[#e1e1e1] rounded-full p-2 text-sm font-light absolute md:-translate-x-[20%] md:left-[20%] lg:-translate-x-[50%] lg:left-[50%]">
-            <p className="px-4 cursor-pointer">Anywhere</p>
-            <p className="px-4 border-x border-[#e1e1e1] cursor-pointer">Any Week</p>
+            <p className="px-4 cursor-pointer font-bold">Anywhere</p>
+            <p className="px-4 border-x border-[#e1e1e1] cursor-pointer">Any week</p>
             <div className="flex items-center">
-              <p className="px-4 text-[#717171] cursor-pointer">Add guests</p>
+              <p className="px-4 text-[#717171] cursor-pointer font-circle">Add guests</p>
               <span className="w-8 h-8 bg-primary rounded-full flex justify-center items-center cursor-pointer">
                 <SearchIcon className="w-[18px] text-white" />
               </span>

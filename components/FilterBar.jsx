@@ -49,7 +49,7 @@ const FilterBar = () => {
               {filters.map(({ name, icon }, i) => (
                 <div
                   key={i}
-                  className={`flex flex-col gap-1 items-center min-w-fit w-full py-2 md:py-4 cursor-pointer border-b  hover:border-[#717171] hover:text-black transition-colors duration-300 ${
+                  className={`flex flex-col gap-1 items-center min-w-fit w-full py-2 md:py-4 cursor-pointer border-b  hover:border-[#717171] hover:text-black active:scale-95 transition-all duration-300 ${
                     filterValue == name ? "text-black border-b-2 border-[#717171]" : "text-[#717171] border-white"
                   }`}
                   onClick={() => setFilterValue(name)}
@@ -57,7 +57,7 @@ const FilterBar = () => {
                   <div className="w-6 min-w-[24px] min-h-[24px]">
                     <img src={icon} alt={name} className="w-full" />
                   </div>
-                  <p className="min-w-fit text-xs md:text-sm text-inherit">{name}</p>
+                  <p className="min-w-fit text-xs text-inherit">{name}</p>
                 </div>
               ))}
             </motion.div>
@@ -87,7 +87,7 @@ const FilterBar = () => {
             )}
           </div>
 
-          <button className="hidden md:flex gap-2 items-center px-4 py-3 rounded-lg text-sm border border-[#e1e1e1] shadow-sm shadow-[#e1e1e1] h-fit">
+          <button className="hidden md:flex gap-2 items-center px-4 py-3 rounded-lg text-xs border border-[#e1e1e1] shadow-sm shadow-[#e1e1e1] h-fit">
             <AdjustmentsIcon className="w-4 rotate-90" /> Filters
           </button>
         </div>

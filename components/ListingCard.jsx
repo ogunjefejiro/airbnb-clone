@@ -137,14 +137,14 @@ const ListingCard = ({ data: { images, name, location, hostName, availableDate, 
               <div className="flex justify-between items-center text-black text-base">
                 <p className="capitalize">{location}</p>
                 <div className="flex items-center">
-                  <StarIcon className="w-4 text-black" /> <p className="text-paragraph"> {rating}</p>
+                  <StarIcon className="w-4 text-black" /> <p className="font-circle text-sm"> {rating}</p>
                 </div>
               </div>
               <p className="text-black capitalize">{name}</p>
-              <p className="">{`Hosted by ${hostName}`}</p>
-              <p className="text-paragraph font-light">{availableDate}</p>
+              <p className="font-circle">{`Hosted by ${hostName}`}</p>
+              <p className="font-circle">{availableDate}</p>
               <p className="text-base text-black mt-1">
-                {formatMoney(price)} <span className="text-sm font-light">night</span>
+                {formatMoney(price)} <span className="text-sm text-black font-circle">night</span>
               </p>
             </div>
           </motion.div>
