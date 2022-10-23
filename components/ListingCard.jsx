@@ -7,6 +7,7 @@ import ListingSkelenton from "./ListingSkelenton";
 
 const ListingCard = ({ data: { images, name, location, hostName, availableDate, price, rating, id } }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [touchPosition, setTouchPosition] = useState(null);
   const [hover, setHover] = useState(false);
   const [liked, setLiked] = useState(false);
   const [loading, setLoading] = useState(true);
@@ -29,6 +30,27 @@ const ListingCard = ({ data: { images, name, location, hostName, availableDate, 
     }
   };
 
+  const handleTouchStart = (e) => {
+    const touchDown = e.touches[0].clientX;
+    setTouchPosition(touchDown);
+  };
+
+  const handleTouchMove = (e) => {
+    const touchDown = touchPosition;
+    const currentTouch = e.touches[0].clientX;
+    const diff = touchDown - currentTouch;
+
+    if (touchDown === null) {
+      return;
+    } else if (diff > 5) {
+      nextImage();
+    } else if (diff < -5) {
+      prevImage();
+    }
+
+    setTouchPosition(null);
+  };
+
   return (
     <div className="relative">
       {loading && <ListingSkelenton />}
@@ -44,11 +66,15 @@ const ListingCard = ({ data: { images, name, location, hostName, availableDate, 
             className="cursor-pointer"
           >
             {/* image */}
-            <div className="w-full h-[250px] md:h-[275px] relative overflow-hidden flex rounded-xl">
+            <div
+              className="w-full h-[250px] md:h-[275px] relative overflow-hidden flex rounded-xl"
+              onTouchStart={handleTouchStart}
+              onTouchMove={handleTouchMove}
+            >
               {images.map((img, i) => (
                 <img
                   loading="lazy"
-                  onLoad={imagesLoaded}
+                  onLoad={i == 0 ? imagesLoaded : null}
                   key={i}
                   src={img}
                   alt={img}
@@ -66,7 +92,12 @@ const ListingCard = ({ data: { images, name, location, hostName, availableDate, 
 
               {/* slider controls */}
               {hover && (
-                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.5 }}
+                  className="hidden md:block"
+                >
                   {currentIndex > 0 && (
                     <div
                       className="absolute left-3 -translate-y-[50%] top-[50%] w-6 h-6 flex justify-center items-center rounded-full bg-[#e9e9e9] hover:bg-white shadow shadow-black text-black cursor-pointer select-none active:scale-90 transition-all duration-200"
