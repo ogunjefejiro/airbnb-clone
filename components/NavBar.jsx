@@ -36,7 +36,7 @@ const NavBar = () => {
             <span className="p-3 hover:bg-[#f5f5f5] rounded-full cursor-pointer">
               <GlobeAltIcon className="w-5" />
             </span>
-            <div className="flex items-center border border-[#e1e1e1] shadow-sm shadow-[#e1e1e1] rounded-full ml-2 px-1 text-sm font-light">
+            <div className="flex items-center border border-[#e1e1e1] hover:shadow-md shadow-[#e1e1e1] rounded-full ml-2 px-1 text-sm font-light transition-shadow duration-300">
               <span className="px-2 cursor-pointer">
                 <MenuIcon className="w-5" />
               </span>
