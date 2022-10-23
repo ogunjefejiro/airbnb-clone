@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/outline";
 import { AnimatePresence, motion } from "framer-motion";
 import { HeartIcon, StarIcon } from "@heroicons/react/solid";
@@ -14,7 +14,7 @@ const ListingCard = ({ data: { images, name, location, hostName, availableDate, 
 
   const imagesLoaded = () => {
     counter.current += 1;
-    if (counter.current >= images.length) {
+    if (counter.current >= images.length - 1) {
       setLoading(false);
     }
   };
