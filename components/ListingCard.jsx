@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/outline";
 import { AnimatePresence, motion } from "framer-motion";
 import { HeartIcon, StarIcon } from "@heroicons/react/solid";
